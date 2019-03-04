@@ -1,0 +1,64 @@
+body {
+    background: burlywood;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.circle-container {
+    width: 400px;
+    height: 300px;
+    background: blue;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+circle.circle-container:after{
+    content: '';
+    width: 20px;
+    height: 5px;
+    position: absolute;
+    background: black;
+    border-radius: 50%;
+    bottom: 0;
+}
+.circle {
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: anim 2s linear infinite;
+}
+.circle:nth-child(2) {
+
+    animation-delay: -0.3s;
+}
+.circle:nth-child(3) {
+    animation-delay: -0.6s;
+   
+}
+
+@keyframes anim {
+    0% {
+        transform-origin: 400% 50%;
+        transform: rotate(0);
+    }
+    50% {
+        transform-origin: 400% 50%;
+        transform: rotate(360deg);
+    }
+    50.1% {
+        transform-origin: -300% 50%;
+        transform: rotate(0deg);
+    }
+    100% {
+        transform-origin: -300% 50%;
+        transform: rotate(-360deg);
+    }
+}
